@@ -1,0 +1,1 @@
+ya sosal menya ebali
