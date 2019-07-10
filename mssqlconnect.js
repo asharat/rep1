@@ -1,20 +1,4 @@
-// const express = require('express')
-// const app = express()
-// app.get('/', (req, res) => {
-//   res.send('neiiii')
-// })
-// app.get('/about', (req, res) => {
-//   res.send('no fun allowed')
-// })
-// app.get('/filetest', (req, res) => {
-//   res.sendFile('C:/dev/ndexsq/testres.html')
-// })
-// app.listen(3000, () => console.log('Server ready'))
-// const User = require('./user.js')
-// let gregory = new User('Gregory',22);
-// gregory.sayHi()
 const sql = require('mssql')
-
 const config = {
   user: 'sa',
   password: 'passme',
@@ -44,6 +28,11 @@ sql.connect(config, err => {
     console.log(err)// ... error handler
   })
 })
-function testf(queryres){
-  console.dir((queryres[0].DAT))
+function testf(qres){
+  // console.dir((qres[0].DAT))
+  // console.dir(qres[1].DAT)
+  //console.log(qres.length)
+  for(let i = 0; i < qres.length; i++){
+    console.dir(qres[i].POK+'|'+qres[i].UT+'|'+qres[i].OTN+'|'+qres[i].SUB+'|'+qres[i].OTN+'|'+qres[i].VID+'|'+qres[i].DAT)
+  }
 }
